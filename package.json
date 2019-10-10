@@ -5,7 +5,7 @@
   "keywords": [],
   "author": "Mate Academy",
   "license": "GPL-3.0",
-  "homepage": ".",
+  "homepage": "https://rafler.github.io/testUPQODE/",
   "dependencies": {
     "bootstrap": "^4.3.1",
     "classnames": "^2.2.6",
