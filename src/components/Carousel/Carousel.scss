@@ -1,0 +1,234 @@
+.slider {
+  position: relative;
+  height: 100vh;
+  z-index: 5000;
+  &__arrow-button {
+    z-index: 30;
+    position: absolute;
+    cursor: pointer;
+    transition: opacity 0.4s ease;
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+  &__video {
+    position: relative;
+    z-index: 10;
+  }
+  &__cover {
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    z-index: 20;
+    background: linear-gradient(
+      180deg,
+      #050d1d 11.29%,
+      rgba(5, 13, 29, 0) 90.3%
+    );
+    @media screen and (max-width: 1050px) {
+      height: 50vh;
+    }
+  }
+  &__title {
+    margin: 0;
+    z-index: 30;
+    position: absolute;
+    top: 33.3%;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    font-size: 90px;
+    font-weight: 600;
+    line-height: 100px;
+    color: white;
+    @media screen and (max-width: 1050px) {
+      top: 15%;
+      font-size: 50px;
+    }
+    @media screen and (max-width: 600px) {
+      max-width: 300px;
+      min-width: 190px;
+      white-space: inherit;
+      font-size: 30px;
+      line-height: 35px;
+      text-align: center;
+    }
+  }
+  &__semi-title {
+    z-index: 30;
+    margin: 0;
+    position: absolute;
+    top: 45.1%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 32px;
+    color: white;
+    letter-spacing: 0.2px;
+    @media screen and (max-width: 1050px) {
+      top: 33%;
+      font-size: 18px;
+      white-space: nowrap;
+    }
+    @media screen and (max-width: 600px) {
+      max-width: 300px;
+      min-width: 190px;
+      white-space: inherit;
+      font-size: 12px;
+      line-height: 12px;
+      text-align: center;
+      top: 50%;
+    }
+  }
+  &__submit-button {
+    font-family: Gilroy, sans-serif;
+    z-index: 30;
+    padding: 14px 21px;
+    border: 2px solid #00a031;
+    position: absolute;
+    background: #00a031;
+    border-radius: 27px;
+    font-size: 18px;
+    line-height: 22px;
+    height: 54px;
+    width: 172px;
+    letter-spacing: 0.1px;
+    color: #f4fbf6;
+    top: 53.2%;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.3s ease-in;
+    &:hover {
+      color: #00a031;
+      background: white;
+    }
+    @media screen and (max-width: 1050px) {
+      top: 65%;
+    }
+  }
+  .right-arrow {
+    top: 44.5%;
+    right: 184px;
+    @media screen and (max-width: 600px) {
+      right: 5%;
+    }
+  }
+  .left-arrow {
+    top: 44.5%;
+    left: 160px;
+    transform: rotate(180deg);
+    @media screen and (max-width: 600px) {
+      left: 5%;
+    }
+  }
+  @media screen and (max-width: 1050px) {
+    height: 50vh;
+  }
+}
+
+.dots {
+  position: absolute;
+  z-index: 30;
+  top: 87.7%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  &__element {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    height: 21px;
+    width: 21px;
+    position: relative;
+  }
+  &__circle {
+    visibility: hidden;
+    width: 21px;
+    height: 21px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s ease;
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+  .active-dot {
+    path {
+      fill: #00a031;
+    }
+  }
+
+  .disactive-circle {
+    visibility: visible;
+  }
+}
+
+.hamburger-menu {
+  position: absolute;
+  height: 100vh;
+  z-index: 20000;
+  background: #00a031;
+  width: 320px;
+  box-shadow: 1px 0 5px rgba(9, 9, 9, 0.74);
+  left: -320px;
+  transition: transform 0.4s ease-in-out;
+  .hamburger__navigation {
+    margin-top: 100px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+    list-style: outside none none;
+    padding-left: 0;
+    margin-bottom: 0;
+    height: 30%;
+    margin-left: 20px;
+  }
+  .navigation-link {
+    font-weight: 800;
+    text-decoration: none;
+    color: white;
+    font-size: 30px;
+  }
+  .navigation__element {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    transition: opacity 0.3s ease-in;
+    i {
+      margin-right: 15px;
+    }
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+  .ham__logo {
+    position: absolute;
+    left: 60%;
+    transform: translateX(-50%);
+    top: 25px;
+    transition: opacity 0.3s ease;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+.active-hamburger {
+  transform: translateX(100%);
+}
